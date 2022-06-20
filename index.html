@@ -17,7 +17,12 @@
             <input type="checkbox" ng-model="todo.done">
             <span class="done-{{todo.done}}">{{todo.text}}</span>
           </label>
-          <p ng-repeat="item in todo.sub">{{item.text}}</p>
+          <ul>
+            <label ng-repeat="item in todo.sub">
+              <input type="checkbox" ng-model="item.done">
+              <span>{{item.text}}</span>
+            </label>
+          </ul>
         </li>
       </ul>
       <form ng-submit="todoList.addTodo()">
