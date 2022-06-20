@@ -18,7 +18,8 @@
         <label class="checkbox">
           <input type="checkbox" ng-model="todo.done">
         </label>
-        <span class="done-{{todo.done}}" ng-click="todoList.subShow(todo)">{{todo.text}}</span>
+        <span class="done-{{todo.done}}" ng-click="todoList.subShow(todo)"
+          ng-class="{'style1':todo.show}">{{todo.text}}</span>
         <ul ng-show="todo.show">
           <label ng-repeat="item in todo.sub">
             <input type="checkbox" ng-model="item.done">
