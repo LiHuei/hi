@@ -2,8 +2,8 @@ angular.module('todoApp', [])
   .controller('TodoListController', function () {
     var todoList = this;
     todoList.todos = [
-      { text: 'typeA', done: false, sub: [{ text: 'A1' }, { text: 'A2' }] },
-      { text: 'typeB', done: false, sub: [{ text: 'B1' }, { text: 'B2' }] }
+      { text: 'typeA', done: false, sub: [{ text: 'A1' }, { text: 'A2' }], show: false },
+      { text: 'typeB', done: false, sub: [{ text: 'B1' }, { text: 'B2' }], show: true }
     ];
 
     todoList.addTodo = function () {
@@ -26,8 +26,16 @@ angular.module('todoApp', [])
         if (!todo.done) todoList.todos.push(todo);
       });
     };
-  });
 
+    todoList.subShow = function (todo) {
+      if (todo.show == true) {
+        todo.show = false;
+      } else {
+        todo.show = true;
+      }
+    };
+
+  });
 
 /*
 Copyright 2022 Google Inc. All Rights Reserved.

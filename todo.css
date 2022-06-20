@@ -3,7 +3,10 @@
   color: grey;
 }
 
-.test{}
+.checkbox {
+  display: inline-block;
+  vertical-align: top;
+}
 
 /*
 Copyright 2022 Google Inc. All Rights Reserved.
