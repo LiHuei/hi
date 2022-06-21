@@ -1,0 +1,30 @@
+.title {
+  margin: 30px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.isChecked {
+  color: #757575;
+  text-decoration: line-through;
+}
+
+.isRed {
+  color: red;
+}
+
+form {
+  display: flex;
+  vertical-align: text-top;
+}
+
+.btn {
+  height: 30px;
+}
+
+.add {
+  margin-top: 30px;
+  margin-left: 30px;
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="todoApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="todo.js"></script>
+  <link rel="stylesheet" href="todo.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+</head>
+
+<body>
+  <h2 class="title">TODO</h2>
+  <div ng-controller="TodoListController as todoList">
+    <ul>
+      <li ng-repeat="todo in todoList.todos">
+        <label for="">
+          <input type="checkbox" name="" id="" ng-model="todo.done">
+          <span ng-click="todoList.openSubList(todo)"
+            ng-class="{'isChecked':todo.done, 'isRed':todo.show}">{{todo.text}}</span>
+        </label>
+        <ul ng-show="todo.show">
+          <li ng-repeat="subList in todo.sub">
+            <label for="">
+              <input type="checkbox" name="" id="" ng-model="subList.done" ng-change="todoList.allChecked(todo)">
+              <span ng-class="{'isChecked':subList.done}">{{subList.text}}</span>
+            </label>
+          </li>
+        </ul>
+        <form ng-submit="todoList.submitSub(todo)" class="add">
+          <input type="text" ng-model="todo.newSubListText">
+          <input type="submit" value="ADD" class="btn">
+        </form>
+      </li>
+    </ul>
+    <form ng-submit="todoList.submit()" class="add">
+      <input type="text" ng-model="todoList.newTodoText">
+      <input type="submit" value="ADD" class="btn">
+    </form>
+    <button type="button" ng-click="todoList.createTodo()">test</button>
+  </div>
+</body>
+
+</html>
+
+<!-- 
+Copyright 2022 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
