@@ -12,7 +12,6 @@ angular.module('todoApp', [])
     }
 
     todoList.func = function (todo) {
-      // console.log(todo.sub)
       // var isAllChecked = todo.sub.every(item => item.checked)
 
       var isAllChecked = true
