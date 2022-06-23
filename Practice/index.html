@@ -15,19 +15,19 @@
       <li ng-repeat="todo in todoList.todos">
         <label for="">
           <input type="checkbox" name="" id="" ng-model="todo.done">
-          <span ng-click="todoList.openSubList(todo)"
+          <span ng-click="todo.switchSubList()"
             ng-class="{'isChecked':todo.done, 'isRed':todo.show}">{{todo.text}}</span>
         </label>
         <ul ng-show="todo.show">
           <li ng-repeat="subList in todo.sub">
             <label for="">
-              <input type="checkbox" name="" id="" ng-model="subList.done" ng-change="todoList.allChecked(todo)">
+              <input type="checkbox" name="" id="" ng-model="subList.done" ng-change="todo.allChecked()">
               <span ng-class="{'isChecked':subList.done}">{{subList.text}}</span>
             </label>
           </li>
         </ul>
-        <form ng-submit="todoList.submitSub(todo)" class="add">
-          <input type="text" ng-model="todo.newSubListText">
+        <form ng-submit="todo.addSub()" class="add">
+          <input type="text" ng-model="todo.newSubTodoText">
           <input type="submit" value="ADD" class="btn">
         </form>
       </li>

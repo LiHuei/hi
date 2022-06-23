@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="todoApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="todo.js"></script>
+  <link rel="stylesheet" href="todo.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+</head>
+
+<body ng-controller="Controller as $ctrl">
+
+  <header>
+    <div class="menu">
+      <div class="container">
+        <div class="logo">
+        </div>
+        <div class="nav">
+          <ul>
+            <li ng-repeat="list in $ctrl.nav">
+              <a href="">{{list.text}}</a>
+              <ul class="bottomList">
+                <li ng-repeat="subList in list.sub">{{subList.text}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+</body>
+
+</html>
+
+<!-- 
+Copyright 2022 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
