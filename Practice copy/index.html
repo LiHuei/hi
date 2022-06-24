@@ -9,25 +9,13 @@
 </head>
 
 <body ng-controller="Controller as $ctrl">
+  <ul>
+    <li ng-repeat="item in $ctrl.nav" ng-click="$ctrl.select(item)">{{item.text}}</li>
+  </ul>
 
-  <header>
-    <div class="menu">
-      <div class="container">
-        <div class="logo">
-        </div>
-        <div class="nav">
-          <ul>
-            <li ng-repeat="list in $ctrl.nav">
-              <a href="">{{list.text}}</a>
-              <ul class="bottomList">
-                <li ng-repeat="subList in list.sub">{{subList.text}}</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
+  <div ng-repeat="item in $ctrl.nav">
+    <div ng-show="item.show">{{item.content}}</div>
+  </div>
 
 </body>
 
